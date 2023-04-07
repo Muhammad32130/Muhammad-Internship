@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import EthImage from "../images/ethereum.svg";
 import { Link, useParams } from "react-router-dom";
-
 import axios from "axios";
 import Skeleton from "../components/UI/Skeleton";
 
@@ -18,7 +17,6 @@ const ItemDetails = () => {
 
     })
    }
-console.log(data)
 useEffect(() => {
     fetchData()
     window.scrollTo(0, 0);

@@ -5,7 +5,8 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Skeleton from "../UI/Skeleton";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const HotCollections = () => {
 const [data, setdata]=useState(null)
@@ -56,7 +57,7 @@ if(!data){
        >
             {data ? data.map((arr)=>{
               return(
-                    <div key={arr.id} className="nft_coll">
+                    <div data-aos="fade-right" key={arr.id} className="nft_coll">
                     <div className="nft_wrap">
                   <Link to={`/item-details/${arr.nftId}`}>
 
