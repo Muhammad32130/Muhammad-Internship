@@ -21,9 +21,11 @@ const [data, setdata]=useState(null)
           setdata(response.data)
     })
   }
-if(!data){
+useEffect(()=>{
+
   getData()
-}
+})
+
     
       
   return (

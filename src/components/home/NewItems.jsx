@@ -18,9 +18,11 @@ const NewItems = () => {
         setitems(response.data)
     })
   }
-  if(!items){
+  useEffect(()=>{
+
     getitems()
-  }
+  })
+  
 
 
 
