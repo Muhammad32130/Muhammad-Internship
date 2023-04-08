@@ -18,14 +18,35 @@ const [data, setdata]=useState(null)
     .then((response)=>{
       
           
-          setdata(response.data)
+           setdata(response.data)
     })
   }
 useEffect(()=>{
-
   getData()
-})
+},[data===null])
 
+const options = {
+  items: 4,
+  loop: true,
+  margin: 10,
+  nav: true,
+  dots: false,
+  rewind: false,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    768: {
+      items: 2,
+    },
+    992: {
+      items: 3,
+    },
+    1200: {
+      items: 4,
+    },
+  },
+};
     
       
   return (
@@ -39,24 +60,7 @@ useEffect(()=>{
             </div>
           </div>
 
-         <OwlCarousel className='owl-theme' loop nav dots={false} items={4} margin={10} responsiveClass={true}
-        responsive= {
-         {
-             '320':{
-                 items: 1
-             },
-             '768':{
-               items:2
-             },
-             '1024':{
-             items:3
-             },
-             '1440':{
-               items:4
-             },
-         }
-       }
-       >
+         <OwlCarousel {...options}>
             {data ? data.map((arr)=>{
               return(
                     <div data-aos="fade-right" key={arr.id} className="nft_coll">

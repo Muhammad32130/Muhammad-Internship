@@ -61,10 +61,7 @@ setitems(null)
                 <i className="fa fa-check"></i>
               </Link>
             </div>
-            {item.expiryDate &&
-
-              <Timer expiryDate={item?.expiryDate}></Timer>
-            }
+            
 
             <div className="nft__item_wrap">
               <div className="nft__item_extra">

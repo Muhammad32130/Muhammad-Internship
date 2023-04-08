@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 import axios from "axios";
 import Timer from "../UI/Timer";
-import ReactOwlCarousel from "react-owl-carousel";
+
 import Skeleton from "../UI/Skeleton";
 
 const NewItems = () => {
@@ -21,13 +23,7 @@ const NewItems = () => {
   useEffect(()=>{
 
     getitems()
-  })
-  
-
-
-
-
-
+  },[items===null])
   
   return (
     <section id="section-items" className="no-bottom">
@@ -41,7 +37,7 @@ const NewItems = () => {
           </div>
           {items ?
 
-            <ReactOwlCarousel className='owl-theme' loop nav dots={false} items={4} margin={10} responsiveClass={true}
+            <OwlCarousel className='owl-theme' loop nav dots={false} items={4} margin={10} 
             responsive= {
               {
                 '320':{
@@ -118,9 +114,9 @@ const NewItems = () => {
               )
             })
           }
-          </ReactOwlCarousel>
+          </OwlCarousel>
           :
-          <ReactOwlCarousel className='owl-theme' loop nav dots={false} items={4} margin={10} responsiveClass={true}
+          <OwlCarousel className='owl-theme' loop nav dots={false} items={4} margin={10} 
             responsive= {
               {
                 '320':{
@@ -147,7 +143,7 @@ const NewItems = () => {
                     title="Creator: Monica Lucas"
                     >
                     <Skeleton width={50} height={50} borderRadius={"50%"}/>
-                    <i class="fa fa-check"></i>
+                    <i className="fa fa-check"></i>
                   </Link>
                 </div>
                     
@@ -184,7 +180,7 @@ const NewItems = () => {
                   </div>
                 </div>
               </div>
-          </ReactOwlCarousel>
+          </OwlCarousel>
     }
       </div>
       </div>
