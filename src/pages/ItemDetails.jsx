@@ -75,7 +75,7 @@ useEffect(() => {
                       <h6>Creator</h6>
                       <div className="item_author">
                         <div className="author_list_pp">
-                          <Link to="/author">
+                          <Link to={`/author/${data.creatorId}`}>
                             <img className="lazy" src={data?.creatorImage} alt="" />
                             <i className="fa fa-check"></i>
                           </Link>

@@ -32,8 +32,8 @@ setitems(null)
 
 
 
-  return (
-    <>
+return (
+  <>
       <div>
         <select onChange={(e)=>{setselect(e.target.value)}} id="filter-items" defaultValue="">
           <option value="">Default</option>
@@ -43,6 +43,7 @@ setitems(null)
         </select>
       </div>
       {items ? items.slice(0,click).map((item)=>{
+  
 
         return(
 
@@ -61,6 +62,11 @@ setitems(null)
                 <i className="fa fa-check"></i>
               </Link>
             </div>
+{item.expiryDate &&
+
+              <Timer expiryDate={item.expiryDate}/>
+}
+            
             
 
             <div className="nft__item_wrap">

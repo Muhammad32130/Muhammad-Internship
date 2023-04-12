@@ -9,6 +9,7 @@ import Skeleton from "../components/UI/Skeleton";
 const Author = () => {
   const { authorId } = useParams()
   const [items, setitems] = useState(null)
+  const [follow, setfollow] = useState(false)
   async function fetchData(){
     await axios.get(`https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${authorId}`)
      .then((data)=>{
@@ -18,6 +19,9 @@ const Author = () => {
 useEffect(()=>{
 fetchData()
 },[])
+
+
+
 
 
   return (
@@ -59,9 +63,9 @@ fetchData()
                   </div>
                   <div className="profile_follow de-flex">
                     <div className="de-flex-col">
-                      <div className="profile_follower">{items?.followers} followers</div>
-                      <Link to="#" className="btn-main">
-                        Follow
+                      <div className="profile_follower">{follow ? items?.followers + 1 :items?.followers } followers</div>
+                      <Link to="#" onClick={()=>{setfollow(!follow)}} className="btn-main">
+                        {follow? "Unfollow" : "Follow"}
                       </Link>
                     </div>
                   </div>
